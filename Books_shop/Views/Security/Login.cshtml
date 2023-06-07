@@ -1,0 +1,32 @@
+﻿@model Books_shop.Data.Models.Security.Login;
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_Layout";
+}
+
+<section>
+    <div class="row">
+        <h3>Увійти</h3>
+        <form asp-action="LoginCheckout" method="post">
+            <div class="form-group col-md-5 ">
+                <label asp-for="Email"></label>
+                <div class="">
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group col-md-5">
+                <label asp-for="Password"></label>
+                <div class="">
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+
+            <button type="submit" class="btn btn-success" style="margin: 20px auto;" asp-controller="Security" asp-action="LoginCheckout">Увійти</button>
+        </form>
+        <a href="/register" style="font-size:18px; color: black;">Реєстрація</a>
+    </div>
+
+</section>

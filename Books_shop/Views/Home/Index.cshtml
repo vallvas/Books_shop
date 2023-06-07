@@ -1,0 +1,13 @@
+﻿@model HomeViewModel
+
+
+<h1 style="margin-top: 100px;">Найкращі книги</h1>
+<div class="row mt-5 mb-2">
+
+    @{
+        foreach (Book book in Model.favBooks)
+        {
+            @Html.Partial("/Pages/Shared/AllBooks.cshtml", book)
+        }
+    }
+</div>
